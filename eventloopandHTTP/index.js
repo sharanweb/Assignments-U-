@@ -1,7 +1,5 @@
 const express  = require("express");
-// console.log(express);
 const app = express();
-//  console.log(app);
 
 app.get("/",function(req,res){
     res.send("hello");
