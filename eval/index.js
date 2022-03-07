@@ -20,7 +20,7 @@ app.get("/libraries",checkPermission("librarian"), (req,res)=>{
 
 
 //routehandler 3
-app.get("/authors", checkPermission("authors"), (req,res)=>{
+app.get("/authors", checkPermission("author"), (req,res)=>{
     res.send({route: req.path , permission: req.permission});
 })
 //insted of route: "/authors" used route: "req.path"
@@ -31,10 +31,10 @@ app.get("/authors", checkPermission("authors"), (req,res)=>{
 //Common middleware for authors and libraries function 
 function checkPermission(something){
     return function (req,res,next){
-        if(something=== 'authors'){
+        if(req.path == '/libraries'){
             req.permission = true;
             
-        }else if(something === "librarian"){
+        }else if(req.path == '/authors'){
             req.permission = true;
         }
         next();
