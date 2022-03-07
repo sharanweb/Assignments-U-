@@ -31,10 +31,10 @@ app.get("/authors", checkPermission("author"), (req,res)=>{
 //Common middleware for authors and libraries function 
 function checkPermission(something){
     return function (req,res,next){
-        if(req.path == '/libraries'){
+        if(req.path == '/libraries' && something == "librarian"){
             req.permission = true;
             
-        }else if(req.path == '/authors'){
+        }else if(req.path == '/authors' && something == "author"){
             req.permission = true;
         }
         next();
