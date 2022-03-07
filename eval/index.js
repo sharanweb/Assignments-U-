@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.use = logger;  //logger for all functions
+app.use(logger);  //logger for all functions
 
 //routehandler 1
 app.get("/books", (req,res)=>{   
