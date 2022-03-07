@@ -1,26 +1,31 @@
 const express = require('express');
 const app = express();
 
-app.use(logger);  //logger for all functions
+app.use = logger;  //logger for all functions
 
 app.get("/books", (req,res)=>{
-    res.send("books");
+    res.send({route: req.path});
 })
 
 app.get("/libraries",checkPermission("/libraries"), (req,res)=>{
     console.log("libraries");
-    res.send("libraries");
+    res.send({route: req.path});
 })
 
 app.get("/authors", checkPermission("authors"), (req,res)=>{
-    res.send("authors");
+    res.send({route: req.path});
 })
 
 //middlewares for authors and libraries
 function checkPermission(something){
     return function (req,res,next){
-        if(something==="/libraries"){
-            
+        if(something==="/libraries" || something === "/authors"){
+            permission = true;
+            next();
+        }else{
+            permission = false;
+            next();
+
         }
     }
 }
