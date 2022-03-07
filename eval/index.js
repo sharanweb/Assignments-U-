@@ -7,6 +7,7 @@ app.use = logger;  //logger for all functions
 app.get("/books", (req,res)=>{   
     res.send({route: req.path});
 })
+// showing like this on browser [{"route":"/books"}];
 
 
 //routehandler 2 
@@ -14,12 +15,18 @@ app.get("/libraries",checkPermission("librarian"), (req,res)=>{
     console.log("libraries");
     res.send({route: req.path , permission: req.permission});
 })
+//insted of route: "/libraries" used route: "req.path"
+// showing like this on browser [{"route":"/libraries","permission":true}];
 
 
 //routehandler 3
 app.get("/authors", checkPermission("authors"), (req,res)=>{
     res.send({route: req.path , permission: req.permission});
 })
+//insted of route: "/authors" used route: "req.path"
+// showing like this on browser [{"route":"/authors","permission":true}];
+
+
 
 //Common middleware for authors and libraries function 
 function checkPermission(something){
