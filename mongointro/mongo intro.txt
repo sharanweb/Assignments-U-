@@ -1,0 +1,169 @@
+ use assignment
+switched to db assignment
+> db
+assignment
+> db.creatCollection("user")
+uncaught exception: TypeError: db.creatCollection is not a function :
+@(shell):1:1
+> db.createCollection("user")
+{ "ok" : 1 }
+> db.user.insert({"first_name":"Yogesh","last_name":"N","email":"yogesh@gamil.com","age":23})
+> db.user.find().pretty()
+{
+        "_id" : ObjectId("622648efdff1a15b47336b5e"),
+        "first_name" : "Avinash",
+        "last_name" : "k",
+        "email" : "aviansh@gmail.com",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62264adfdff1a15b47336b5f"),
+        "first_name" : "Yogesh",
+        "last_name" : "N",
+        "email" : "yogesh@gamil.com",
+        "age" : 23
+}
+> db.user.insertMany([{"first_name":"Rohan","last_name":"V","email":"rohan@gmail.com","age":19},{"first_name":"Rahul","last_name":"k","email":"rahul@gmail.com","age":20},{"first_name":"Abhi","last_name":"K","email":"abhi@gmail.com","age":25}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62264d8ab80b766455a46dd9"),
+                ObjectId("62264d8ab80b766455a46dda"),
+                ObjectId("62264d8ab80b766455a46ddb")
+        ]
+}
+> db.user.find().pretty()
+{
+        "_id" : ObjectId("622648efdff1a15b47336b5e"),
+        "first_name" : "Avinash",
+        "last_name" : "k",
+        "email" : "aviansh@gmail.com",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62264adfdff1a15b47336b5f"),
+        "first_name" : "Yogesh",
+        "last_name" : "N",
+        "email" : "yogesh@gamil.com",
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46dd9"),
+        "first_name" : "Rohan",
+        "last_name" : "V",
+        "email" : "rohan@gmail.com",
+        "age" : 19
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46dda"),
+        "first_name" : "Rahul",
+        "last_name" : "k",
+        "email" : "rahul@gmail.com",
+        "age" : 20
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46ddb"),
+        "first_name" : "Abhi",
+        "last_name" : "K",
+        "email" : "abhi@gmail.com",
+        "age" : 25
+}
+> db.user.findOne({"age":23})
+{
+        "_id" : ObjectId("622648efdff1a15b47336b5e"),
+        "first_name" : "Avinash",
+        "last_name" : "k",
+        "email" : "aviansh@gmail.com",
+        "age" : 23
+}
+> db.user.update({"first_name":"Abhi"},{$set :{"last_name":"N"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.user.find({"first_name":"Abhi"})
+{ "_id" : ObjectId("62264d8ab80b766455a46ddb"), "first_name" : "Abhi", "last_name" : "N", "email" : "abhi@gmail.com", "age" : 25 }
+> db.user.updateMany({"age":23},{$set :{"City":"Bengaluru"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.user.find({"age":23})
+{ "_id" : ObjectId("622648efdff1a15b47336b5e"), "first_name" : "Avinash", "last_name" : "k", "email" : "aviansh@gmail.com", "age" : 23, "City" : "Bengaluru" }
+{ "_id" : ObjectId("62264adfdff1a15b47336b5f"), "first_name" : "Yogesh", "last_name" : "N", "email" : "yogesh@gamil.com", "age" : 23, "City" : "Bengaluru" }
+> db.user.find({"age":23}).pretty()
+{
+        "_id" : ObjectId("622648efdff1a15b47336b5e"),
+        "first_name" : "Avinash",
+        "last_name" : "k",
+        "email" : "aviansh@gmail.com",
+        "age" : 23,
+        "City" : "Bengaluru"
+}
+{
+        "_id" : ObjectId("62264adfdff1a15b47336b5f"),
+        "first_name" : "Yogesh",
+        "last_name" : "N",
+        "email" : "yogesh@gamil.com",
+        "age" : 23,
+        "City" : "Bengaluru"
+}
+> db.user.remove({"first_name":"Abhi"})
+WriteResult({ "nRemoved" : 1 })
+> db.user.find({}).pretty()
+{
+        "_id" : ObjectId("622648efdff1a15b47336b5e"),
+        "first_name" : "Avinash",
+        "last_name" : "k",
+        "email" : "aviansh@gmail.com",
+        "age" : 23,
+        "City" : "Bengaluru"
+}
+{
+        "_id" : ObjectId("62264adfdff1a15b47336b5f"),
+        "first_name" : "Yogesh",
+        "last_name" : "N",
+        "email" : "yogesh@gamil.com",
+        "age" : 23,
+        "City" : "Bengaluru"
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46dd9"),
+        "first_name" : "Rohan",
+        "last_name" : "V",
+        "email" : "rohan@gmail.com",
+        "age" : 19
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46dda"),
+        "first_name" : "Rahul",
+        "last_name" : "k",
+        "email" : "rahul@gmail.com",
+        "age" : 20
+}
+
+> db.user.remove({"age":23},1)
+WriteResult({ "nRemoved" : 1 })
+> db.user.find({}).pretty()
+{
+        "_id" : ObjectId("62264adfdff1a15b47336b5f"),
+        "first_name" : "Yogesh",
+        "last_name" : "N",
+        "email" : "yogesh@gamil.com",
+        "age" : 23,
+        "City" : "Bengaluru"
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46dd9"),
+        "first_name" : "Rohan",
+        "last_name" : "V",
+        "email" : "rohan@gmail.com",
+        "age" : 19
+}
+{
+        "_id" : ObjectId("62264d8ab80b766455a46dda"),
+        "first_name" : "Rahul",
+        "last_name" : "k",
+        "email" : "rahul@gmail.com",
+        "age" : 20
+}
+> db.dropDatabase()
+{ "ok" : 1 }
+> db
+assignment
+> db.user.find()
+>

@@ -1,0 +1,23 @@
+// db.movies.find({title:{$eq:"Red Heat"}},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({title:{$ne:"Starlet"}},{title:1,year:1,_id:0}).pretty().limit(5)
+
+// db.movies.find({budget:{$gte:10000}},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({budget:{$lte:10000}},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({budget:{$gte:10000}},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({$and:[{year:{$gt:2000}},{budget:{$gt:10000}}]},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({$or:[{year:{$gt:2000}},{budget:{$gt:10000}}]},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({$nor:[{year:{$gt:2000}},{budget:{$gt:10000}}]},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({$or:[{year:{$not:{$gt:2000}}},{budget:{$not:{$gt:10000}}}]},{title:1,year:1,_id:0}).pretty().limit(5)
+
+// db.movies.find({year:{$in:[2000,2010]}},{title:1,year:1,_id:0}).pretty()
+
+// db.movies.find({year:2000},{title:1,year:1,_id:0}).sort({year:-1,title:-1}).pretty()
+
+// db.movies.find({},{year:-1,title:-1,_id:0}).sort({query:1}).skip(10).limit(5)

@@ -1,0 +1,1257 @@
+> use assign2
+switched to db assign2
+> db.movies.find({title:{$eq:"Starlet"}}).pretty()   
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c527"),
+        "title" : "Starlet",
+        "genre" : "Drama",
+        "year" : 2015,
+        "budget" : 12148
+}
+db.movies.find({title:{$ne:"Starlet"}}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c517"),
+        "title" : "Aakrosh",
+        "genre" : "Action|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15673
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c518"),
+        "title" : "Murder at 1600",
+        "genre" : "Crime|Drama|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 16474
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c519"),
+        "title" : "City on Fire (Lung fu fong wan)",
+        "genre" : "Action|Crime|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15860
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51a"),
+        "title" : "Popcorn",
+        "genre" : "Horror",
+        "year" : 1997,
+        "budget" : 16497
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51b"),
+        "title" : "Eye Above the Well, The (Het oog boven de put)",
+        "genre" : "Documentary",
+        "year" : 2016,
+        "budget" : 14274
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51c"),
+        "title" : "Sword of the Beast (Kedamono no ken)",
+        "genre" : "Action|Drama",
+        "year" : 2005,
+        "budget" : 13492
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51d"),
+        "title" : "Jimmy Neutron: Boy Genius",
+        "genre" : "Adventure|Animation|Children|Comedy",
+        "year" : 1999,
+        "budget" : 16923
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51e"),
+        "title" : "Madhouse",
+        "genre" : "Comedy",
+        "year" : 1992,
+        "budget" : 19150
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51f"),
+        "title" : "At Berkeley",
+        "genre" : "Documentary",
+        "year" : 1990,
+        "budget" : 13627
+}
+
+db.movies.find({budget:{$gte:10000}}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c517"),
+        "title" : "Aakrosh",
+        "genre" : "Action|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15673
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c518"),
+        "title" : "Murder at 1600",
+        "genre" : "Crime|Drama|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 16474
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c519"),
+        "title" : "City on Fire (Lung fu fong wan)",
+        "genre" : "Action|Crime|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15860
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51a"),
+        "title" : "Popcorn",
+        "genre" : "Horror",
+        "year" : 1997,
+        "budget" : 16497
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51b"),
+        "title" : "Eye Above the Well, The (Het oog boven de put)",
+        "genre" : "Documentary",
+        "year" : 2016,
+        "budget" : 14274
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51c"),
+        "title" : "Sword of the Beast (Kedamono no ken)",
+        "genre" : "Action|Drama",
+        "year" : 2005,
+        "budget" : 13492
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51d"),
+        "title" : "Jimmy Neutron: Boy Genius",
+        "genre" : "Adventure|Animation|Children|Comedy",
+        "year" : 1999,
+        "budget" : 16923
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51e"),
+        "title" : "Madhouse",
+        "genre" : "Comedy",
+        "year" : 1992,
+        "budget" : 19150
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51f"),
+        "title" : "At Berkeley",
+        "genre" : "Documentary",
+        "year" : 1990,
+        "budget" : 13627
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c520"),
+        "title" : "Nekromantik 2",
+        "genre" : "Horror",
+        "year" : 2001,
+        "budget" : 19154
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c521"),
+        "title" : "Black Sabbath (Tre volti della paura, I)",
+        "genre" : "Horror",
+        "year" : 2014,
+        "budget" : 18726
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c522"),
+        "title" : "Horrors of Spider Island (Ein Toter Hing im Netz)",
+        "genre" : "Horror|Sci-Fi",
+        "year" : 1999,
+        "budget" : 15009
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c523"),
+        "title" : "Obsession",
+        "genre" : "Mystery|Thriller",
+        "year" : 2005,
+        "budget" : 15539
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c524"),
+        "title" : "Battling Butler",
+        "genre" : "Comedy",
+        "year" : 2009,
+        "budget" : 16233
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c525"),
+        "title" : "Border Run (Mule, The)",
+        "genre" : "Crime|Thriller",
+        "year" : 2016,
+        "budget" : 17996
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c526"),
+        "title" : "Ice Castles",
+        "genre" : "Drama|Romance",
+        "year" : 2019,
+        "budget" : 10625
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c527"),
+        "title" : "Starlet",
+        "genre" : "Drama",
+        "year" : 2015,
+        "budget" : 12148
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c528"),
+        "title" : "XIII: The Conspiracy",
+        "genre" : "Action|Crime|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 19184
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c529"),
+        "title" : "Film ist. 7-12",
+        "genre" : "Documentary",
+        "year" : 2007,
+        "budget" : 12316
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52b"),
+        "title" : "Ivans xtc.",
+        "genre" : "Drama",
+        "year" : 2004,
+        "budget" : 19820
+}
+Type "it" for more
+
+db.movies.find({budget:{$lte:10000}}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52a"),
+        "title" : "Burrowers, The",
+        "genre" : "Horror|Thriller|Western",
+        "year" : 2015,
+        "budget" : 9044
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c53a"),
+        "title" : "Cottage Country",
+        "genre" : "Action|Comedy|Crime",
+        "year" : 1992,
+        "budget" : 9054
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c553"),
+        "title" : "Radio",
+        "genre" : "Drama",
+        "year" : 2009,
+        "budget" : 9093
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c56c"),
+        "title" : "Jane Eyre",
+        "genre" : "Drama|Romance",
+        "year" : 2017,
+        "budget" : 9942
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c581"),
+        "title" : "Young Poisoner's Handbook, The",
+        "genre" : "Crime|Drama",
+        "year" : 2007,
+        "budget" : 9338
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c595"),
+        "title" : "College",
+        "genre" : "Comedy",
+        "year" : 2017,
+        "budget" : 9681
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5aa"),
+        "title" : "Kummeli Goldrush (Kummeli kultakuume)",
+        "genre" : "Comedy",
+        "year" : 2000,
+        "budget" : 9413
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5b7"),
+        "title" : "Charlie Chan and the Curse of the Dragon Queen",
+        "genre" : "Comedy|Mystery",
+        "year" : 2010,
+        "budget" : 9950
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5bf"),
+        "title" : "Cowboy and the Lady, The",
+        "genre" : "Comedy|Drama|Romance|Western",
+        "year" : 1995,
+        "budget" : 9771
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5c3"),
+        "title" : "Of Gods and Men (Des hommes et des dieux)",
+        "genre" : "Drama",
+        "year" : 2009,
+        "budget" : 9027
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5cb"),
+        "title" : "Tainted",
+        "genre" : "Comedy|Thriller",
+        "year" : 2008,
+        "budget" : 9370
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5d0"),
+        "title" : "The Damned",
+        "genre" : "Horror|Mystery|Thriller",
+        "year" : 2006,
+        "budget" : 9420
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5df"),
+        "title" : "Monument Ave.",
+        "genre" : "Action|Crime|Drama",
+        "year" : 2014,
+        "budget" : 9631
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5f9"),
+        "title" : "Touchback",
+        "genre" : "Children|Drama|Fantasy",
+        "year" : 1995,
+        "budget" : 9322
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c607"),
+        "title" : "Robe, The",
+        "genre" : "Drama",
+        "year" : 1998,
+        "budget" : 9170
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61b"),
+        "title" : "Princess Yang Kwei Fei (Yôkihi)",
+        "genre" : "Drama|Romance",
+        "year" : 1997,
+        "budget" : 9374
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61c"),
+        "title" : "Endless Love",
+        "genre" : "Drama|Romance",
+        "year" : 2000,
+        "budget" : 9143
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c632"),
+        "title" : "Cameron's Closet",
+        "genre" : "Horror",
+        "year" : 1994,
+        "budget" : 9345
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c636"),
+        "title" : "Ordinary Miracles",
+        "genre" : "Drama",
+        "year" : 2015,
+        "budget" : 9551
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c641"),
+        "title" : "Execution Squad",
+        "genre" : "Crime|Drama",
+        "year" : 2006,
+        "budget" : 9694
+}
+Type "it" for more
+
+ db.movies.find({budget:{$gte:10000}}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c517"),
+        "title" : "Aakrosh",
+        "genre" : "Action|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15673
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c518"),
+        "title" : "Murder at 1600",
+        "genre" : "Crime|Drama|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 16474
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c519"),
+        "title" : "City on Fire (Lung fu fong wan)",
+        "genre" : "Action|Crime|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15860
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51a"),
+        "title" : "Popcorn",
+        "genre" : "Horror",
+        "year" : 1997,
+        "budget" : 16497
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51b"),
+        "title" : "Eye Above the Well, The (Het oog boven de put)",
+        "genre" : "Documentary",
+        "year" : 2016,
+        "budget" : 14274
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51c"),
+        "title" : "Sword of the Beast (Kedamono no ken)",
+        "genre" : "Action|Drama",
+        "year" : 2005,
+        "budget" : 13492
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51d"),
+        "title" : "Jimmy Neutron: Boy Genius",
+        "genre" : "Adventure|Animation|Children|Comedy",
+        "year" : 1999,
+        "budget" : 16923
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51e"),
+        "title" : "Madhouse",
+        "genre" : "Comedy",
+        "year" : 1992,
+        "budget" : 19150
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51f"),
+        "title" : "At Berkeley",
+        "genre" : "Documentary",
+        "year" : 1990,
+        "budget" : 13627
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c520"),
+        "title" : "Nekromantik 2",
+        "genre" : "Horror",
+        "year" : 2001,
+        "budget" : 19154
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c521"),
+        "title" : "Black Sabbath (Tre volti della paura, I)",
+        "genre" : "Horror",
+        "year" : 2014,
+        "budget" : 18726
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c522"),
+        "title" : "Horrors of Spider Island (Ein Toter Hing im Netz)",
+        "genre" : "Horror|Sci-Fi",
+        "year" : 1999,
+        "budget" : 15009
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c523"),
+        "title" : "Obsession",
+        "genre" : "Mystery|Thriller",
+        "year" : 2005,
+        "budget" : 15539
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c524"),
+        "title" : "Battling Butler",
+        "genre" : "Comedy",
+        "year" : 2009,
+        "budget" : 16233
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c525"),
+        "title" : "Border Run (Mule, The)",
+        "genre" : "Crime|Thriller",
+        "year" : 2016,
+        "budget" : 17996
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c526"),
+        "title" : "Ice Castles",
+        "genre" : "Drama|Romance",
+        "year" : 2019,
+        "budget" : 10625
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c527"),
+        "title" : "Starlet",
+        "genre" : "Drama",
+        "year" : 2015,
+        "budget" : 12148
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c528"),
+        "title" : "XIII: The Conspiracy",
+        "genre" : "Action|Crime|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 19184
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c529"),
+        "title" : "Film ist. 7-12",
+        "genre" : "Documentary",
+        "year" : 2007,
+        "budget" : 12316
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52b"),
+        "title" : "Ivans xtc.",
+        "genre" : "Drama",
+        "year" : 2004,
+        "budget" : 19820
+}
+Type "it" for more
+
+db.movies.find({$and:[{year:{$gt:2000}},{budget:{$gt:10000}}]},{}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c517"),
+        "title" : "Aakrosh",
+        "genre" : "Action|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15673
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c518"),
+        "title" : "Murder at 1600",
+        "genre" : "Crime|Drama|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 16474
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c519"),
+        "title" : "City on Fire (Lung fu fong wan)",
+        "genre" : "Action|Crime|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15860
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51b"),
+        "title" : "Eye Above the Well, The (Het oog boven de put)",
+        "genre" : "Documentary",
+        "year" : 2016,
+        "budget" : 14274
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51c"),
+        "title" : "Sword of the Beast (Kedamono no ken)",
+        "genre" : "Action|Drama",
+        "year" : 2005,
+        "budget" : 13492
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c520"),
+        "title" : "Nekromantik 2",
+        "genre" : "Horror",
+        "year" : 2001,
+        "budget" : 19154
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c521"),
+        "title" : "Black Sabbath (Tre volti della paura, I)",
+        "genre" : "Horror",
+        "year" : 2014,
+        "budget" : 18726
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c523"),
+        "title" : "Obsession",
+        "genre" : "Mystery|Thriller",
+        "year" : 2005,
+        "budget" : 15539
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c524"),
+        "title" : "Battling Butler",
+        "genre" : "Comedy",
+        "year" : 2009,
+        "budget" : 16233
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c525"),
+        "title" : "Border Run (Mule, The)",
+        "genre" : "Crime|Thriller",
+        "year" : 2016,
+        "budget" : 17996
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c526"),
+        "title" : "Ice Castles",
+        "genre" : "Drama|Romance",
+        "year" : 2019,
+        "budget" : 10625
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c527"),
+        "title" : "Starlet",
+        "genre" : "Drama",
+        "year" : 2015,
+        "budget" : 12148
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c528"),
+        "title" : "XIII: The Conspiracy",
+        "genre" : "Action|Crime|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 19184
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c529"),
+        "title" : "Film ist. 7-12",
+        "genre" : "Documentary",
+        "year" : 2007,
+        "budget" : 12316
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52b"),
+        "title" : "Ivans xtc.",
+        "genre" : "Drama",
+        "year" : 2004,
+        "budget" : 19820
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52d"),
+        "title" : "Children of Huang Shi, The",
+        "genre" : "Drama|War",
+        "year" : 2007,
+        "budget" : 16103
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52e"),
+        "title" : "Death Proof",
+        "genre" : "Action|Adventure|Crime|Horror|Thriller",
+        "year" : 2016,
+        "budget" : 12888
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52f"),
+        "title" : "Shotgun Stories",
+        "genre" : "Drama|Thriller",
+        "year" : 2004,
+        "budget" : 10902
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c531"),
+        "title" : "Drop Dead Gorgeous",
+        "genre" : "Comedy",
+        "year" : 2012,
+        "budget" : 15497
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c532"),
+        "title" : "Lili Marleen",
+        "genre" : "Drama",
+        "year" : 2009,
+        "budget" : 17491
+}
+Type "it" for more
+
+
+db.movies.find({$or:[{year:{$gt:2000}},{budget:{$gt:10000}}]},{}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c517"),
+        "title" : "Aakrosh",
+        "genre" : "Action|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15673
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c518"),
+        "title" : "Murder at 1600",
+        "genre" : "Crime|Drama|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 16474
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c519"),
+        "title" : "City on Fire (Lung fu fong wan)",
+        "genre" : "Action|Crime|Drama|Thriller",
+        "year" : 2006,
+        "budget" : 15860
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51a"),
+        "title" : "Popcorn",
+        "genre" : "Horror",
+        "year" : 1997,
+        "budget" : 16497
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51b"),
+        "title" : "Eye Above the Well, The (Het oog boven de put)",
+        "genre" : "Documentary",
+        "year" : 2016,
+        "budget" : 14274
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51c"),
+        "title" : "Sword of the Beast (Kedamono no ken)",
+        "genre" : "Action|Drama",
+        "year" : 2005,
+        "budget" : 13492
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51d"),
+        "title" : "Jimmy Neutron: Boy Genius",
+        "genre" : "Adventure|Animation|Children|Comedy",
+        "year" : 1999,
+        "budget" : 16923
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51e"),
+        "title" : "Madhouse",
+        "genre" : "Comedy",
+        "year" : 1992,
+        "budget" : 19150
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51f"),
+        "title" : "At Berkeley",
+        "genre" : "Documentary",
+        "year" : 1990,
+        "budget" : 13627
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c520"),
+        "title" : "Nekromantik 2",
+        "genre" : "Horror",
+        "year" : 2001,
+        "budget" : 19154
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c521"),
+        "title" : "Black Sabbath (Tre volti della paura, I)",
+        "genre" : "Horror",
+        "year" : 2014,
+        "budget" : 18726
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c522"),
+        "title" : "Horrors of Spider Island (Ein Toter Hing im Netz)",
+        "genre" : "Horror|Sci-Fi",
+        "year" : 1999,
+        "budget" : 15009
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c523"),
+        "title" : "Obsession",
+        "genre" : "Mystery|Thriller",
+        "year" : 2005,
+        "budget" : 15539
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c524"),
+        "title" : "Battling Butler",
+        "genre" : "Comedy",
+        "year" : 2009,
+        "budget" : 16233
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c525"),
+        "title" : "Border Run (Mule, The)",
+        "genre" : "Crime|Thriller",
+        "year" : 2016,
+        "budget" : 17996
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c526"),
+        "title" : "Ice Castles",
+        "genre" : "Drama|Romance",
+        "year" : 2019,
+        "budget" : 10625
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c527"),
+        "title" : "Starlet",
+        "genre" : "Drama",
+        "year" : 2015,
+        "budget" : 12148
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c528"),
+        "title" : "XIII: The Conspiracy",
+        "genre" : "Action|Crime|Mystery|Thriller",
+        "year" : 2014,
+        "budget" : 19184
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c529"),
+        "title" : "Film ist. 7-12",
+        "genre" : "Documentary",
+        "year" : 2007,
+        "budget" : 12316
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c52a"),
+        "title" : "Burrowers, The",
+        "genre" : "Horror|Thriller|Western",
+        "year" : 2015,
+        "budget" : 9044
+}
+Type "it" for more
+
+db.movies.find({$nor:[{year:{$gt:2000}},{budget:{$gt:10000}}]},{}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c53a"),
+        "title" : "Cottage Country",
+        "genre" : "Action|Comedy|Crime",
+        "year" : 1992,
+        "budget" : 9054
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5aa"),
+        "title" : "Kummeli Goldrush (Kummeli kultakuume)",
+        "genre" : "Comedy",
+        "year" : 2000,
+        "budget" : 9413
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5bf"),
+        "title" : "Cowboy and the Lady, The",
+        "genre" : "Comedy|Drama|Romance|Western",
+        "year" : 1995,
+        "budget" : 9771
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5f9"),
+        "title" : "Touchback",
+        "genre" : "Children|Drama|Fantasy",
+        "year" : 1995,
+        "budget" : 9322
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c607"),
+        "title" : "Robe, The",
+        "genre" : "Drama",
+        "year" : 1998,
+        "budget" : 9170
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61b"),
+        "title" : "Princess Yang Kwei Fei (Yôkihi)",
+        "genre" : "Drama|Romance",
+        "year" : 1997,
+        "budget" : 9374
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61c"),
+        "title" : "Endless Love",
+        "genre" : "Drama|Romance",
+        "year" : 2000,
+        "budget" : 9143
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c632"),
+        "title" : "Cameron's Closet",
+        "genre" : "Horror",
+        "year" : 1994,
+        "budget" : 9345
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c64a"),
+        "title" : "Salvation, The",
+        "genre" : "Drama|Western",
+        "year" : 1999,
+        "budget" : 9436
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c6c4"),
+        "title" : "The Woodcarver",
+        "genre" : "Drama",
+        "year" : 1997,
+        "budget" : 9067
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c6c5"),
+        "title" : "The Cobbler",
+        "genre" : "Comedy|Drama|Fantasy",
+        "year" : 1990,
+        "budget" : 9428
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c6d2"),
+        "title" : "Mrs. Parker and the Vicious Circle",
+        "genre" : "Drama",
+        "year" : 1998,
+        "budget" : 9021
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c6e1"),
+        "title" : "Tenth Man, The",
+        "genre" : "Drama|War",
+        "year" : 1993,
+        "budget" : 9030
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c726"),
+        "title" : "Emotion",
+        "genre" : "Comedy|Horror",
+        "year" : 1990,
+        "budget" : 9632
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c72f"),
+        "title" : "Tales from the Script",
+        "genre" : "Documentary",
+        "year" : 1995,
+        "budget" : 9513
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c752"),
+        "title" : "Man Who Knew Too Much, The",
+        "genre" : "Adventure|Drama|Mystery|Thriller",
+        "year" : 2000,
+        "budget" : 9610
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c778"),
+        "title" : "Jacob the Liar (Jakob, der Lügner)",
+        "genre" : "Drama",
+        "year" : 1998,
+        "budget" : 9421
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c789"),
+        "title" : "Pretty Cool",
+        "genre" : "Action|Comedy|Thriller",
+        "year" : 2000,
+        "budget" : 9627
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c79c"),
+        "title" : "Very Potter Sequel, A",
+        "genre" : "Comedy|Musical",
+        "year" : 1991,
+        "budget" : 9081
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c7ad"),
+        "title" : "Leech Woman, The",
+        "genre" : "Horror|Sci-Fi",
+        "year" : 2000,
+        "budget" : 9162
+}
+Type "it" for more
+
+db.movies.find({$or:[{year:{$not:{$gt:2000}}},{budget:{$not:{$gt:10000}}}]},{}).pretty().limit(5)
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51a"),
+        "title" : "Popcorn",
+        "genre" : "Horror",
+        "year" : 1997,
+        "budget" : 16497
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51d"),
+        "title" : "Jimmy Neutron: Boy Genius",
+        "genre" : "Adventure|Animation|Children|Comedy",
+        "year" : 1999,
+        "budget" : 16923
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51e"),
+        "title" : "Madhouse",
+        "genre" : "Comedy",
+        "year" : 1992,
+        "budget" : 19150
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c51f"),
+        "title" : "At Berkeley",
+        "genre" : "Documentary",
+        "year" : 1990,
+        "budget" : 13627
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c522"),
+        "title" : "Horrors of Spider Island (Ein Toter Hing im Netz)",
+        "genre" : "Horror|Sci-Fi",
+        "year" : 1999,
+        "budget" : 15009
+}
+
+
+db.movies.find({year:{$in:[2000,2010]}}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c53b"),
+        "title" : "The Voices",
+        "genre" : "Comedy|Crime|Thriller",
+        "year" : 2010,
+        "budget" : 12088
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c54d"),
+        "title" : "Romantics, The",
+        "genre" : "Comedy|Drama|Romance",
+        "year" : 2010,
+        "budget" : 10793
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c555"),
+        "title" : "How High",
+        "genre" : "Comedy",
+        "year" : 2010,
+        "budget" : 17780
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c558"),
+        "title" : "Bleak Moments",
+        "genre" : "Comedy|Drama",
+        "year" : 2000,
+        "budget" : 13274
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c55b"),
+        "title" : "Brothers Bloom, The",
+        "genre" : "Adventure|Comedy|Crime|Romance",
+        "year" : 2000,
+        "budget" : 17246
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c55d"),
+        "title" : "Fine Mess, A",
+        "genre" : "Comedy",
+        "year" : 2000,
+        "budget" : 14556
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c564"),
+        "title" : "Bonnie and Clyde",
+        "genre" : "Crime|Documentary|Drama",
+        "year" : 2000,
+        "budget" : 10812
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c593"),
+        "title" : "Man with a Cloak, The",
+        "genre" : "Drama|Thriller",
+        "year" : 2000,
+        "budget" : 14047
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c599"),
+        "title" : "Angel of Mine (a.k.a. The Mark of an Angel) (L'empreinte de l'ange)",
+        "genre" : "Drama",
+        "year" : 2010,
+        "budget" : 12800
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c59b"),
+        "title" : "Rise",
+        "genre" : "Action|Horror|Mystery|Thriller",
+        "year" : 2000,
+        "budget" : 16016
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5a1"),
+        "title" : "Dr. Goldfoot and the Girl Bombs (Le spie vengono dal semifreddo)",
+        "genre" : "Comedy|Sci-Fi",
+        "year" : 2010,
+        "budget" : 15174
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5aa"),
+        "title" : "Kummeli Goldrush (Kummeli kultakuume)",
+        "genre" : "Comedy",
+        "year" : 2000,
+        "budget" : 9413
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5b7"),
+        "title" : "Charlie Chan and the Curse of the Dragon Queen",
+        "genre" : "Comedy|Mystery",
+        "year" : 2010,
+        "budget" : 9950
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5be"),
+        "title" : "No Retreat, No Surrender 2: Raging Thunder",
+        "genre" : "Action|Adventure",
+        "year" : 2010,
+        "budget" : 18266
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5ee"),
+        "title" : "Hijacking Catastrophe: 9/11, Fear & the Selling of American Empire",
+        "genre" : "Documentary",
+        "year" : 2000,
+        "budget" : 19587
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c606"),
+        "title" : "Strayed (égarés, Les)",
+        "genre" : "Drama|Romance",
+        "year" : 2000,
+        "budget" : 15203
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c612"),
+        "title" : "Olivier, Olivier",
+        "genre" : "Drama",
+        "year" : 2010,
+        "budget" : 11054
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61c"),
+        "title" : "Endless Love",
+        "genre" : "Drama|Romance",
+        "year" : 2000,
+        "budget" : 9143
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61f"),
+        "title" : "Howling III: The Marsupials",
+        "genre" : "Comedy|Horror",
+        "year" : 2000,
+        "budget" : 10522
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c639"),
+        "title" : "Welcome to Sherwood! The Story of 'The Adventures of Robin Hood'",
+        "genre" : "Documentary",
+        "year" : 2010,
+        "budget" : 11379
+}
+Type "it" for more
+
+db.movies.find({year:2000}).sort({year:-1,title:-1}).pretty()
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c6a0"),
+        "title" : "Woman's Face, A (En kvinnas ansikte) ",
+        "genre" : "Drama",
+        "year" : 2000,
+        "budget" : 14699
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c8da"),
+        "title" : "War and Peace (Voyna i mir)",
+        "genre" : "Drama|Romance|War",
+        "year" : 2000,
+        "budget" : 10819
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c71a"),
+        "title" : "Tsunami: Caught on Camera",
+        "genre" : "Documentary",
+        "year" : 2000,
+        "budget" : 18810
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c63b"),
+        "title" : "Tomie: Unlimited",
+        "genre" : "Horror",
+        "year" : 2000,
+        "budget" : 14219
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c783"),
+        "title" : "Thief of Bagdad, The",
+        "genre" : "Adventure|Fantasy",
+        "year" : 2000,
+        "budget" : 15182
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c606"),
+        "title" : "Strayed (égarés, Les)",
+        "genre" : "Drama|Romance",
+        "year" : 2000,
+        "budget" : 15203
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c722"),
+        "title" : "Sheltering Sky, The",
+        "genre" : "Drama",
+        "year" : 2000,
+        "budget" : 14223
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c59b"),
+        "title" : "Rise",
+        "genre" : "Action|Horror|Mystery|Thriller",
+        "year" : 2000,
+        "budget" : 16016
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c85b"),
+        "title" : "Quick Change",
+        "genre" : "Comedy|Crime",
+        "year" : 2000,
+        "budget" : 17399
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c789"),
+        "title" : "Pretty Cool",
+        "genre" : "Action|Comedy|Thriller",
+        "year" : 2000,
+        "budget" : 9627
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c766"),
+        "title" : "Penthouse North",
+        "genre" : "Drama|Mystery|Thriller",
+        "year" : 2000,
+        "budget" : 18178
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c896"),
+        "title" : "One Tough Cop",
+        "genre" : "Action|Crime",
+        "year" : 2000,
+        "budget" : 12765
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c7d4"),
+        "title" : "Münchhausen",
+        "genre" : "Adventure|Comedy|Fantasy",
+        "year" : 2000,
+        "budget" : 15493
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c6dd"),
+        "title" : "Manchurian Candidate, The",
+        "genre" : "Thriller",
+        "year" : 2000,
+        "budget" : 12346
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c593"),
+        "title" : "Man with a Cloak, The",
+        "genre" : "Drama|Thriller",
+        "year" : 2000,
+        "budget" : 14047
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c752"),
+        "title" : "Man Who Knew Too Much, The",
+        "genre" : "Adventure|Drama|Mystery|Thriller",
+        "year" : 2000,
+        "budget" : 9610
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c7ad"),
+        "title" : "Leech Woman, The",
+        "genre" : "Horror|Sci-Fi",
+        "year" : 2000,
+        "budget" : 9162
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c5aa"),
+        "title" : "Kummeli Goldrush (Kummeli kultakuume)",
+        "genre" : "Comedy",
+        "year" : 2000,
+        "budget" : 9413
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c645"),
+        "title" : "Kafka",
+        "genre" : "Comedy|Drama|Mystery|Sci-Fi|Thriller",
+        "year" : 2000,
+        "budget" : 12815
+}
+{
+        "_id" : ObjectId("622760a91c2d67a9d3c4c61f"),
+        "title" : "Howling III: The Marsupials",
+        "genre" : "Comedy|Horror",
+        "year" : 2000,
+        "budget" : 10522
+}
+Type "it" for more
