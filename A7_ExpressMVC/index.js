@@ -5,7 +5,7 @@ const app = express();
 
 //connect mongo database
 const connect = ()=>{
-    return mongoose.connect("mongodb://127.0.0.1:27017/evalData");
+    return mongoose.connect("mongodb://127.0.0.1:27017/masaiEval");
 }
 app.use(express.json());
 
@@ -63,7 +63,7 @@ const evaluationSchema = new mongoose.Schema(
       },
       batch_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "topic",
+        ref: "batch",
         required: true,
       },
     },
@@ -135,7 +135,16 @@ app.post("/users", async(req,res)=>{
 //sc - 1  : getting the data from server
 app.get("/students", async(req,res) =>{
     try {
-        const students = await Student.find().lean().exec();
+        const students = await Student.find()
+          .populate({path:"user_id", select:{first_name:1, last_name:1,}})
+          .populate({path:"evaluation_id",select:["dat_of_evaluation"],
+             populate:[
+                 {path:"instructor_details",select:["first_name","last_name"]},
+                 {path:"batch_id",select:["batch_name"]}
+                ]
+            })
+          .lean()
+          .exec();
         return res.status(200).send({students:students});
     } catch (error) {
         console.log(error);
@@ -169,7 +178,7 @@ app.get("/batches", async(req,res) =>{
 //bc - 2  : posting the data on the server
 app.post("/batches", async(req,res)=>{
     try {
-        const batches = await Student.create(req.body);
+        const batches = await Batch.create(req.body);
         return res.status(201).send(batches);
     } catch (error) {
         console.log(error);
@@ -181,7 +190,7 @@ app.post("/batches", async(req,res)=>{
 //ec - 1  : getting the data from server
 app.get("/evaluations", async(req,res) =>{
     try {
-        const evaluations = await Evaluation.find().lean().exec();
+        const evaluations = await Evaluation.find().populate("instructor_details").populate("batch_id").lean().exec();
         return res.status(200).send({evaluations:evaluations});
     } catch (error) {
         console.log(error);
@@ -205,7 +214,17 @@ app.post("/evaluations", async(req,res)=>{
 //suc - 1  : getting the data from server
 app.get("/submissions", async(req,res) =>{
     try {
-        const submissions = await Submission.find().lean().exec();
+        const submissions = await Submission.find()
+          .populate({path:"student_id",select:["roll_id","current_batch"],
+              populate:[
+                  {path:"user_id",select:["first_name","last_name"]},
+                  {path:"evaluation_id", select:["date_of_evaluation"],
+                    populate:{path:"instructor_details",select:["first_name","last_name"]}
+                  }
+                ]
+           })
+          .lean()
+          .exec();
         return res.status(200).send({submissions:submissions});
     } catch (error) {
         console.log(error);
@@ -231,25 +250,32 @@ app.post("/submissions", async(req,res)=>{
 
 app.get("/:id/students", async (req, res) => {
     try {
-
-        const students = await Student.find({evaluation_id: evaluation_id}).populate({path: "user_id", select: ["first_name", "last_name"]}).lean().exec();
+        const evaluation = await Evaluation.findById(req.params.id).lean().exec();
+        const students = await Student.find({evaluation_id: evaluation._id}).populate({path: "user_id", select: ["first_name", "last_name"]}).lean().exec();
 
         return res.status(201).send(students);
 
-    } catch (e) {
-        return res.status(500).send({ message: e.message, status: "Failed" });
+    } catch (error) {
+        return res.status(500).send({ message: error.message });
     }
 });
 
 //op - 2: fetch the student with his personal details who scored the highest marks in the evaluation
 app.get("/topper", async (req, res) => {
     try {
-        const student = await Student.find().sort({marks: -1}).limit(1).populate("user_id").lean().exec();
+        const student = await Submission.find()
+          .sort({marks: -1})
+          .limit(1)
+          .populate({path:"student_id",select:[],
+             populate:{path:"user_id", select:["first_name","last_name"]}
+           })
+          .lean()
+          .exec();
 
         return res.status(201).send(student);
 
-    } catch (e) {
-        return res.status(500).send({ message: e.message, status: "Failed" });
+    } catch (error) {
+        return res.status(500).send({ message: error.message});
     }
 })
 
