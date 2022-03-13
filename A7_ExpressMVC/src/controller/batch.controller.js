@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Batch = require("../model/batch.model");
+const Batch = require("../model/batch.model");  //imported from models
 
 //____________Batch CRUD____________________//
 //bc - 1  : getting the data from server

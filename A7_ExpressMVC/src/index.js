@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-module.exports = app;
+module.exports = app; //export to server.js
 
 // const mongoose = require("mongoose");
 app.use(express.json());
