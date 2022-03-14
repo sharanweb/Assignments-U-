@@ -192,10 +192,20 @@ app.post("/fixedaccount",async(req,res)=>{
     //all the accounts that the user has but only the account_number and balance
     app.get("/masteraccount/:id", async(req,res)=>{
         try {
-            const master = await Masteraccountdetail.find(req.params.id).lean().exec();
+            const master = await Masteraccountdetail.findById(req.params.id ,req.body , {new:true}).lean().exec();
             return res.status(200).send({masterholder: master});
         } catch (error) {
             return res.status(500).send(error.message);
         }
     });
 
+//5//
+app.delete("/fixed/:id" , async (req,res) =>{
+    try {
+        const fixed = await Fixedaccountnumber.findByIdAndDelete(req.params.id).lean().exec()
+
+        return res.status(201).send({fixed:fixed})
+    } catch (error) {
+        return res.status(500).send({error:error})
+    }
+})
