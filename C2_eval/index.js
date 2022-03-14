@@ -192,7 +192,7 @@ app.post("/fixedaccount",async(req,res)=>{
     //all the accounts that the user has but only the account_number and balance
     app.get("/masteraccount/:id", async(req,res)=>{
         try {
-            const master = await Masteraccountdetail.find().lean().exec();
+            const master = await Masteraccountdetail.find(req.params.id).lean().exec();
             return res.status(200).send({masterholder: master});
         } catch (error) {
             return res.status(500).send(error.message);
