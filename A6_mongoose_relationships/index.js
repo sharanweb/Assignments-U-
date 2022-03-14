@@ -138,6 +138,15 @@ app.get("/:author_ID/books", async(req,res)=>{
     }
 });
 
+app.get("/books/:author_ID", async(req,res)=>{
+    try {
+        const booksbya = await Book.find({author_id: req.params.author_ID}).lean().exec();
+        return res.status(200).send({books: booksbya});
+    } catch (error) {
+        return res.status(500).send({error: error});
+    }
+});
+
 //op - 2  : getting the books in the particulat section
 app.get("/books/:section_ID", async(req,res)=>{
     try {
@@ -151,6 +160,15 @@ app.get("/books/:section_ID", async(req,res)=>{
 
 //op - 3  : find books of 1 author inside a section Optional
 app.get("/:section_Id/books/:author_ID",async(req,res)=>{
+    try {
+        const bookbyone = await Book.find({$and:[{section_Id: req.params.section_ID},{author_id: req.params.author_ID}]}).lean().exec();
+        return res.status(200).send({books: bookbyone});   
+    } catch (error) {
+        return res.status(500).send({error: error});
+    }
+})
+
+app.get("/books/:section_Id/:author_ID",async(req,res)=>{
     try {
         const bookbyone = await Book.find({$and:[{section_Id: req.params.section_ID},{author_id: req.params.author_ID}]}).lean().exec();
         return res.status(200).send({books: bookbyone});   
