@@ -199,6 +199,17 @@ app.post("/fixedaccount",async(req,res)=>{
         }
     });
 
+//6//
+app.delete("/fixed/:id" , async (req,res) =>{
+    try {
+        const fixed = await Fixedaccountnumber.findByIdAndDelete(req.params.id).lean().exec()
+
+        return res.status(201).send({fixed:fixed})
+    } catch (error) {
+        return res.status(500).send({error:error})
+    }
+})
+
 //5//
 app.delete("/fixed/:id" , async (req,res) =>{
     try {
