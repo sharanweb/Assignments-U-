@@ -157,7 +157,10 @@ app.post("/users",async(req,res)=>{
 
 app.get("/masteraccount", async(req,res)=>{
     try {
-        const master = await Masteraccountdetail.find().lean().exec();
+        const master = await Masteraccountdetail.find()
+        .populate("user") //will show th entire details of the users inside master
+        .lean()
+        .exec();
         return res.status(200).send({masterholder: master});
     } catch (error) {
         return res.status(500).send(error.message);
@@ -187,7 +190,7 @@ app.post("/fixedaccount",async(req,res)=>{
 
 //4 - GET API that takes the master account id and returns a list of 
     //all the accounts that the user has but only the account_number and balance
-    app.get("/masteraccount", async(req,res)=>{
+    app.get("/masteraccount/:id", async(req,res)=>{
         try {
             const master = await Masteraccountdetail.find().lean().exec();
             return res.status(200).send({masterholder: master});
