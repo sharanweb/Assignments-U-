@@ -123,10 +123,14 @@ const Fixedaccountnumber = mongoose.model("fixedaccountnumber",fixedaccountSchem
 app.get("/masteraccount", async(req,res)=>{
     try {
         const master = await Masteraccountdetail.find().lean().exec();
-        return 
+        return res.status(200).send({masterholder: master});
     } catch (error) {
-        
+        return res.status(500).send(error.message);
     }
 })
+
+
+//2 - POST API for the user to create a SavingsAccount
+app.post("/savingsaccount",async)
 
 
