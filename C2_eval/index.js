@@ -87,12 +87,23 @@ const savingsaccountSchema = mongoose.Schema(
             ref:"user",
             required:true
         },
+        branchdetail_id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"branchdetail",
+            required:true
+        },
+        master_id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"masteraccountdetail",
+            required:true
+        }
     },
     {
         versionKey:false,
         timestamps:true
     }
 )
+const Savingsaccount = mongoose.model("savingsaccountdetail",savingsaccountSchema);
 
 //-------------------FIxed Account Schema--------------//
 const fixedaccountSchema = mongoose.Schema(
@@ -107,6 +118,16 @@ const fixedaccountSchema = mongoose.Schema(
             ref:"user",
             required:true
         },
+        branchdetail_id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"branchdetail",
+            required:true
+        },
+        master_id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"masteraccountdetail",
+            required:true
+        }
     },
     {
         versionKey:false,
@@ -114,6 +135,20 @@ const fixedaccountSchema = mongoose.Schema(
     }
 )
 const Fixedaccountnumber = mongoose.model("fixedaccountnumber",fixedaccountSchema);
+
+
+
+
+//---------------CRUD------------------------//
+//post user details
+app.post("/users",async(req,res)=>{
+    try {
+        const user = await User.create(req.body);
+        return res.status(200).send({holder: user});
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+});
 
 
 //_____________________CRUD________________________//
@@ -127,10 +162,37 @@ app.get("/masteraccount", async(req,res)=>{
     } catch (error) {
         return res.status(500).send(error.message);
     }
-})
+});
 
 
 //2 - POST API for the user to create a SavingsAccount
-app.post("/savingsaccount",async)
+app.post("/savingsaccount",async(req,res)=>{
+    try {
+        const saving = await Savingsaccount.create(req.body);
+        return res.status(200).send({savingsholder: saving});
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+});
 
+//3 - POST API for the user to create a FixedAccount
+app.post("/fixedaccount",async(req,res)=>{
+    try {
+        const fixed = await Fixedaccountnumber.create(req.body);
+        return res.status(200).send({fixed: fixed});
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+});
+
+//4 - GET API that takes the master account id and returns a list of 
+    //all the accounts that the user has but only the account_number and balance
+    app.get("/masteraccount", async(req,res)=>{
+        try {
+            const master = await Masteraccountdetail.find().lean().exec();
+            return res.status(200).send({masterholder: master});
+        } catch (error) {
+            return res.status(500).send(error.message);
+        }
+    });
 
