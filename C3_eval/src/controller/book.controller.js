@@ -1,16 +1,24 @@
-const express = require("express");
-const Book = require("../model/book.model");
+const express = require('express');
+
 const router = express.Router();
 
+const Book = require('../models/book.model');
 
+const upload = require('../middleware/uploads');
 
-router.post("",async(req,res)=>{
-    try {
-        const book = await Book.create(req.body);
-        return res.status(200).send({ book});
-    } catch (error) {
-        return res.status(500).send(error.message);
+router.post('', upload.single('coverImage'), async (req, res) => {
+	try {
+		const book = await Book.create({
+			like: req.body.like,
+			coverImage: req.file.path,
+			content: req.body.content,
+			userId: req.body.userId,
+		});
+
+        return res.send(book)
+	} catch (error) {
+        return res.send({error:error.message})
     }
 });
 
-module.exports = router;
+module.exports =router;

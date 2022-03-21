@@ -10,7 +10,7 @@ const bookController = require("./controller/book.controller");
 app.post("/register",
   body("firstName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
   body("lastName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
-  body("age").isLength({min:1,max:3}).withMessage("No man has lived beyond 135 years").custom((value)=>{
+  body("age").withMessage("No man has lived beyond 135 years").custom((value)=>{
     if(value<1 || value >100){
         throw new Error("Age should between 1 to 100");
     }
@@ -22,7 +22,7 @@ app.post("/register",
 app.post("/login",
   body("firstName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
   body("lastName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
-  body("age").isLength({min:1,max:3}).withMessage("No man has lived beyond 135 years").custom((value)=>{
+  body("age").withMessage("No man has lived beyond 135 years").custom((value)=>{
     if(value<1 || value >100){
         throw new Error("Age should between 1 to 100");
     }
