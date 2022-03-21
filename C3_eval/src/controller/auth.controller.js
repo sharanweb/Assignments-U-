@@ -33,4 +33,31 @@ const register = ("",
    }
 );
 
-module.exports = register;
+const login = async(req,res) =>{
+    try {
+        //check for email exists or not
+        let user = await User.findOne({email:req.body.mail}).lean().exec();
+
+        if(!user){
+            return res.status(400).json({
+                message:"Email doesnot Exists try different"
+            });
+        }
+
+        //match the passwords
+        const match = await user.checkPassword(req.body.passowrd);
+        if(!user){
+            return res.status(500).json({
+                message:"Incorrect Password"
+            });
+        }
+        //if match then create the token
+        const token = newToken(user);
+        return res.status(200).send({token:token, user:user});
+
+    } catch (error) {
+        return res.status(500).send({error:error.message}); 
+    }
+}
+
+module.exports = {register, login};
