@@ -35,7 +35,4 @@ app.use("/comment", commentController);
 //create a post route to create books with 1 cover image.
 app.use("/book", bookController);
 
-
-
-
 module.exports = app;
