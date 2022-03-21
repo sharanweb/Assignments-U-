@@ -6,7 +6,7 @@ const {body, validationResult} = require("express-validator");
 const commentController = require("./controller/comment.controller");
 const bookController = require("./controller/book.controller");
 
-//validation of the user registering
+//validation of the user registering    //authentication done
 app.post("/register",
   body("firstName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
   body("lastName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
@@ -18,7 +18,7 @@ app.post("/register",
 }), register
 
 );
-//validation of the user logging in
+//validation of the user logging in       //authentication done
 app.post("/login",
   body("firstName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
   body("lastName").not().isEmpty().isLength({min:3, max:30}).withMessage("min 3 and max 30 chars allowed"),
