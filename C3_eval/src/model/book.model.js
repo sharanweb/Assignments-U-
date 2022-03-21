@@ -15,6 +15,12 @@ const bookSchema = new mongoose.Schema(
             ref:"publication",
             required: true
 
+        },
+        comment_id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"publication",
+            required: true
+
         }
     },
     {
