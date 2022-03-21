@@ -3,7 +3,8 @@ const app = express();
 app.use(express.json());
 const {register,login }= require("./controller/auth.controller");
 const {body, validationResult} = require("express-validator");
-const commentController = require("./controller/comment.controller")
+const commentController = require("./controller/comment.controller");
+const bookController = require("./controller/book.controller");
 
 //validation of the user registering
 app.post("/register",
@@ -30,7 +31,9 @@ app.post("/login",
 
 );
 //create a post route to create comments.
-app.use("/comment", commentController)
+app.use("/comment", commentController);
+//create a post route to create books with 1 cover image.
+app.use("/book", bookController);
 
 
 
